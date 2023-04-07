@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./asstes/css/styles-guy.css">
+    <title>Document</title>
+</head>
+<style>
+    /* media query */
+    @media only screen and (max-width: 992px){
+        h3{font-size: 15px !important;}
+    }
+    @media only screen and (max-width: 992px){
+        .small-picture{
+            width: 20%;
+            margin-bottom: 9px;
+        }
+        .small-picture img{
+            margin-top: -16px;
+        }
+        .big-picture img{
+            width: 45% !important;
+        }
+    }
+    @media only screen and (max-width: 481px){
+        ul button{
+            font-size: 10px !important;
+        }
+        ul li{
+            margin: 1px !important;
+        }
+    }
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+        background-color: #0d143e;
+    }
+    .nav-pills .nav-link{
+        color: white;background-color: #FC7D34;
+    }
+    #pagination {
+    display: flex;
+    justify-content: center;
+    }
+    #pagination-one{
+    display: flex;
+    justify-content: center;
+    }
+    #pagination-two{
+    display: flex;
+    justify-content: center;
+    }
+    #pagination-three{
+    display: flex;
+    justify-content: center;
+    }
+</style>
+
+<body>
+
+    <div class="header">
+        <div class="container-fluid">
+            <div class="container d-flex flex-row justify-content-center">
+
+                <nav class="navbar navbar-expand-md navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="./index.html">
+                            <img class="logo" src="./asstes/images/logo/logo.png" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-0 mb-lg-0" id="menu-remove-add-active">
+                                <li class="nav-item">
+                                    <a class="nav-link pt-2 " aria-current="page" href="./index.html">Acceuil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pt-2 active" href="./school.html">Ecole</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pt-2" href="./orientations.html">Orientation</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pt-2" href="./events.html">Events</a>
+                                </li>
+                                <li class="nav-item d-flex align-items-center">
+                                    <div class="login rounded-pill d-flex align-items-center border">
+                                        <i class="bi ps-2 pt-1 bi-person-circle"></i>
+                                        <a class="nav-link py-0 pt-1" href="login.html">Connexion</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <main class="content">
+        <div class="container">
+            <section class="home">
+                <div style="display: flex;justify-content: center;" class="img-search">
+                    <img src="./asstes/images/img-search.png" width="10%" alt="">
+                </div>
+                <h3 style="text-align: center;font-size: 25px;margin-bottom: 20px;">Et si on cherchait votre prochaine école dès maintenant ?</h3>
+                <div style="padding: 20px;background-color: #0d143e;border-radius: 20px;margin-bottom: 50px;" class="button-for-sear-part">
+                   <form action="">
+                        <div class="row" style="display: flex;justify-content: center;">
+                            <div class="col-md-3 mb-3"><input style="border-radius: 20px;" type="text" class="form-control" placeholder="Ville/Commune"></div>
+                            <div class="col-md-3 mb-3">
+                                <select style="border-radius: 20px;" type="text" class="form-control" class="form-select" aria-label="Default select example">
+                                    <option selected>Type d'établissement</option>
+                                    <option value="1">Privé</option>
+                                    <option value="2">Publique</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <select style="border-radius: 20px;" type="text" class="form-control" class="form-select" aria-label="Default select example">
+                                    <option selected>Type d'école</option>
+                                    <option value="1">Primaire</option>
+                                    <option value="2">Secondaire</option>
+                                    <option value="2">Université</option>
+                                    <option value="2">Grande école</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" style="display: flex;justify-content: center;">
+                            <!-- " -->
+                            <div class="col-md-6 mb-3"><input style="border-radius: 20px;" type="text" class="form-control" placeholder="Quel école recherchez-vous ?"></div>
+                            <div class="col-md-3"><center><button style="border-radius: 20px;width: 70%;background-color: #FC7D34;" type="button" class="btn btn-secondary"><strong>CHERCHER</strong></button></center></div>
+                        </div>
+                   </form>
+                </div>
+            </section>
+        </div>
+        <hr class="mb-3">
+        <div class="container mb-5">
+            <ul class="nav nav-pills mb-3" style="display: flex;justify-content: center;" id="pills-tab" role="tablist">
+                <li style="margin: 5px;" class="nav-item" role="presentation">
+                    <button style="border-radius: 25px;" class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-college" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><strong>COLLÈGE</strong></button>
+                </li>
+                <li style="margin: 5px;" class="nav-item" role="presentation">
+                    <button style="border-radius: 25px;" class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-lycee" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><strong>LYCÉE</strong></button>
+                </li>
+                <li style="margin: 5px;" class="nav-item" role="presentation">
+                    <button style="border-radius: 25px;" class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-primaire" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><strong>PRIMAIRE</strong></button>
+                </li>
+                <li style="margin: 5px;" class="nav-item" role="presentation">
+                    <button style="border-radius: 25px;" class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-universite" type="button" role="tab" aria-controls="pills-universite" aria-selected="false"><strong>UNIVERSITÉ</strong></button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-college" role="tabpanel" aria-labelledby="pills-college-tab">
+                    <div class="row" id="data">
+                        <div class="col-md-4 mb-3 element">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ1.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logo_universite/R.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ1.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logo_universite/R.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ1.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logo_universite/R.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ1.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logo_universite/R.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ1.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logo_universite/R.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pagination">
+                        <button style="border: none;background-color: #fff;" id="prev-btn"><i style="color: #FC7D34;font-size: 30px;" class="bi bi-caret-left-fill"></i></button>
+                        <button style="border: none;background-color: #fff;" id="next-btn"><i style="color: #FC7D34;font-size: 30px;" class="bi bi-caret-right-fill"></i></button>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-lycee" role="tabpanel" aria-labelledby="pills-lycee-tab">
+                    <div class="row" id="data">
+                        <div class="col-md-4 mb-3 element-one">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-one">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ1.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logo_universite/R.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-one">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-one">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-one">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pagination-one">
+                        <button style="border: none;background-color: #fff;" id="prev-btn-one"><i style="color: #FC7D34;font-size: 30px;" class="bi bi-caret-left-fill"></i></button>
+                        <button style="border: none;background-color: #fff;" id="next-btn-one"><i style="color: #FC7D34;font-size: 30px;" class="bi bi-caret-right-fill"></i></button>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-primaire" role="tabpanel" aria-labelledby="pills-primaire-tab">
+                    <div class="row" id="data">
+                        <div class="col-md-4 mb-3 element-two">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-two">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ1.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logo_universite/R.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-two">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-two">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-two">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pagination-two">
+                        <button style="border: none;background-color: #fff;" id="prev-btn-two"><i style="color: #FC7D34;font-size: 30px;" class="bi bi-caret-left-fill"></i></button>
+                        <button style="border: none;background-color: #fff;" id="next-btn-two"><i style="color: #FC7D34;font-size: 30px;" class="bi bi-caret-right-fill"></i></button>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-universite" role="tabpanel" aria-labelledby="pills-universite-tab">
+                    <div class="row" id="data">
+                        <div class="col-md-4 mb-3 element-three">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-three">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ1.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logo_universite/R.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-three">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-three">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 element-three">
+                            <div class="card text-white" style="border:none">
+                                <img src="./asstes/images/univ2.png" class="card-img rounded" alt="...">
+                                <div class="card-img-overlay d-flex flex-column bd-highlight">
+                                    <div class="card-body" style="padding: 30px;">
+                                        <div class="big-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/logoOne.png" width="50%" alt=""></div><br>
+                                        <div class="small-picture" style="display: flex;justify-content: center;"><img src="./asstes/images/second.png" width="15%" alt=""></div>
+                                        <div><h4 style="text-transform: uppercase;text-align: center;color: white;">cocody</h4></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" style="padding: 15px;margin-top: -50px;background-color: #FC7D34;text-align: center;">
+                                    <small style="color: white;font-size: 20px;text-transform: uppercase;"><strong>Nom de l'établissement</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pagination-three">
+                        <button style="border: none;background-color: #fff;" id="prev-btn-three"><i style="color: #FC7D34;font-size: 30px;" class="bi bi-caret-left-fill"></i></button>
+                        <button style="border: none;background-color: #fff;" id="next-btn-three"><i style="color: #FC7D34;font-size: 30px;" class="bi bi-caret-right-fill"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer container-fluid">
+        <footer class="container d-flex flex-column justify-content-center align-items-center">
+            <div class="logo d-flex justify-content-center align-items-center my-3">
+                <img class="w-25" src="./asstes/images/logo/logo.png" alt="">
+            </div>
+            <p class="copyright text-light fw-bold">&copy; copy right tous droit reserve</p>
+        </footer>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./asstes/js/add-remove-active.js"></script>
+    <script>
+        const elements = document.querySelectorAll('.element');
+        const prevBtn = document.querySelector('#prev-btn');
+        const nextBtn = document.querySelector('#next-btn');
+        const elements_one = document.querySelectorAll('.element-one');
+        const prevBtn_one = document.querySelector('#prev-btn-one');
+        const nextBtn_one = document.querySelector('#next-btn-one');
+        const elements_two = document.querySelectorAll('.element-two');
+        const prevBtn_two = document.querySelector('#prev-btn-two');
+        const nextBtn_two = document.querySelector('#next-btn-two');
+        const elements_three = document.querySelectorAll('.element-three');
+        const prevBtn_three = document.querySelector('#prev-btn-three');
+        const nextBtn_three = document.querySelector('#next-btn-three');
+      
+        const elementsPerPage = 3;
+        let currentPage = 1;
+        const elements_onePerPage = 3;
+        let current_onePage = 1;
+        const elements_twoPerPage = 3;
+        let current_twoPage = 1;
+        const elements_threePerPage = 3;
+        let current_threePage = 1;
+      
+        function showPage(page) {
+          const startIndex = (page - 1) * elementsPerPage;
+          const endIndex = startIndex + elementsPerPage;
+      
+          elements.forEach((element, index) => {
+            if (index >= startIndex && index < endIndex) {
+              element.style.display = 'flex';
+            } else {
+              element.style.display = 'none';
+            }
+          });
+        }
+        function showonePage(pageOne) {
+          const startOneIndex = (pageOne - 1) * elements_onePerPage;
+          const endOneIndex = startOneIndex + elements_onePerPage;
+      
+          elements_one.forEach((element_one, index_one) => {
+            if (index_one >= startOneIndex && index_one < endOneIndex) {
+              element_one.style.display = 'flex';
+            } else {
+              element_one.style.display = 'none';
+            }
+          });
+        }
+        function showtwoPage(pageTwo) {
+          const startTwoIndex = (pageTwo - 1) * elements_twoPerPage;
+          const endTwoIndex = startTwoIndex + elements_twoPerPage;
+      
+          elements_two.forEach((element_two, index_two) => {
+            if (index_two >= startTwoIndex && index_two < endTwoIndex) {
+              element_two.style.display = 'flex';
+            } else {
+              element_two.style.display = 'none';
+            }
+          });
+        }
+        function showthreePage(pageThree) {
+          const startThreeIndex = (pageThree - 1) * elements_threePerPage;
+          const endThreeIndex = startThreeIndex + elements_threePerPage;
+      
+          elements_three.forEach((element_three, index_three) => {
+            if (index_three >= startThreeIndex && index_three < endThreeIndex) {
+              element_three.style.display = 'flex';
+            } else {
+              element_three.style.display = 'none';
+            }
+          });
+        }
+      
+        prevBtn.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+          }
+        });
+        prevBtn_one.addEventListener('click', () => {
+          if (current_onePage > 1) {
+            current_onePage--;
+            showonePage(current_onePage);
+          }
+        });
+        prevBtn_two.addEventListener('click', () => {
+          if (current_twoPage > 1) {
+            current_twoPage--;
+            showtwoPage(current_twoPage);
+          }
+        });
+        prevBtn_three.addEventListener('click', () => {
+          if (current_threePage > 1) {
+            current_threePage--;
+            showthreePage(current_threePage);
+          }
+        });
+      
+        nextBtn.addEventListener('click', () => {
+          if (currentPage < Math.ceil(elements.length / elementsPerPage)) {
+            currentPage++;
+            showPage(currentPage);
+          }
+        });
+        nextBtn_one.addEventListener('click', () => {
+          if (current_onePage < Math.ceil(elements_one.length / elements_onePerPage)) {
+            current_onePage++;
+            showonePage(current_onePage);
+          }
+        });
+        nextBtn_two.addEventListener('click', () => {
+          if (current_twoPage < Math.ceil(elements_two.length / elements_twoPerPage)) {
+            current_twoPage++;
+            showtwoPage(current_twoPage);
+          }
+        });
+        nextBtn_three.addEventListener('click', () => {
+          if (current_threePage < Math.ceil(elements_three.length / elements_threePerPage)) {
+            current_threePage++;
+            showthreePage(current_threePage);
+          }
+        });
+      
+        showPage(currentPage);
+        showonePage(current_onePage);
+        showtwoPage(current_twoPage);
+        showthreePage(current_threePage);
+    </script>
+</body>
+
+</html>

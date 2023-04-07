@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./asstes/css/styles-guy.css">
+    <link rel="stylesheet" href="./asstes/css/styles-ced.css">
+    <link rel="stylesheet" href="https://unpkg.com/stepper-js/dist/bundle.css" />
+    <title>Document</title>
+    <style>
+        h1 {text-align: center;}
+        h2 {margin: 0;}
+        #multi-step-form-container {margin-top: 5rem;}
+        .text-center {text-align: center;}
+        .mx-auto {margin-left: auto;margin-right: auto;}
+        .pl-0 {padding-left: 0;}
+        .button {padding: 0.7rem 1.5rem;border: 1px solid #6b6b6d;background-color: #6b6b6d;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            border: 1px solid #0e9594;
+            background-color: #0e9594;
+        }
+        .mt-3 {
+            margin-top: 2rem;
+        }
+        .d-none {
+            display: none;
+        }
+        .form-step {
+            border: none;
+        }
+        .font-normal {
+            font-weight: normal;
+        }
+        ul.form-stepper {
+            counter-reset: section;
+            margin-bottom: 3rem;
+        }
+        ul.form-stepper .form-stepper-circle {
+            position: relative;
+        }
+        ul.form-stepper .form-stepper-circle span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+        .form-stepper-horizontal {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+        ul.form-stepper > li:not(:last-of-type) {
+            margin-bottom: 0.625rem;
+            -webkit-transition: margin-bottom 0.4s;
+            -o-transition: margin-bottom 0.4s;
+            transition: margin-bottom 0.4s;
+        }
+        .form-stepper-horizontal > li:not(:last-of-type) {
+            margin-bottom: 0 !important;
+        }
+        .form-stepper-horizontal li {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: start;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+        }
+        .form-stepper-horizontal li:not(:last-child):after {
+            position: relative;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            height: 1px;
+            content: "";
+            top: 32%;
+        }
+        .form-stepper-horizontal li:after {
+            background-color: #dee2e6;
+        }
+        .form-stepper-horizontal li.form-stepper-completed:after {
+            background-color: #6b6b6d;
+        }
+        .form-stepper-horizontal li:last-child {
+            flex: unset;
+        }
+        ul.form-stepper li a .form-stepper-circle {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 0;
+            line-height: 1.7rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.38);
+            border-radius: 50%;
+        }
+        .form-stepper .form-stepper-active .form-stepper-circle {
+            background-color: #6b6b6d !important;
+            color: #fff;
+        }
+        .form-stepper .form-stepper-active .form-stepper-circle:hover {
+            background-color: #FC7D34 !important;
+            color: #fff !important;
+        }
+        .form-stepper .form-stepper-unfinished .form-stepper-circle {
+            background-color: #f8f7ff;
+        }
+        .form-stepper .form-stepper-completed .form-stepper-circle {
+            background-color: #0b0b0b !important;
+            color: #fff;
+        }
+        .form-stepper .form-stepper-completed .form-stepper-circle:hover {
+            background-color: #FC7D34 !important;
+            color: #fff !important;
+        }
+        /* media query */
+        @media only screen and (min-width: 768px)  and (max-width: 992px){.croix img{width: 4% !important;}.btn-suivant{width: 50% !important;}input{height: 48px !important;}}
+        @media only screen and (max-width: 768px){.croix img{margin-left: -30px;width: 5% !important;}#btn-suivant{display: flex;justify-content: center;}#btn-suivant button{width: 100% !important;margin-top: 10px !important;}h3{font-size: 17px;}.img-first-resize img{width: 20%;}.img-resize img{margin-bottom: 5px;width: 50%;}input{height: 38px !important;}}
+        body{background: url('./asstes/images/background.png') no-repeat;background-size: cover;}.overlay{background-color: rgba(22, 15, 49, 0.586);height: 791px;padding-top: 120px;}
+        /* media query step 2*/
+        @media only screen and (min-width: 768px)  and (max-width: 992px){.croix img{width: 4% !important;}.btn-suivant{width: 50% !important;}input{height: 48px !important;}}
+        @media only screen and (max-width: 768px){.croix img{margin-left: -30px;width: 5% !important;}#btn-suivant{display: flex;justify-content: center;}#btn-suivant button{width: 100% !important;margin-top: 10px !important;}h3{font-size: 17px;}.img-first-resize img{width: 20%;}.img-resize img{margin-bottom: 5px;width: 50%;}input{height: 38px !important;}}
+        body{background: url('./asstes/images/background.png') no-repeat;background-size: cover;}.overlay{background-color: rgba(22, 15, 49, 0.586);height: 791px;padding-top: 120px;}
+        /* media query step 3*/
+        @media only screen and (min-width: 768px)  and (max-width: 992px){h1{font-size: 50px !important;}p{font-size: 30px !important;}span{font-size: 25px !important;}.croix img{width: 4% !important;}.btn-suivant{width: 50% !important;}input{height: 48px !important;}}
+        @media only screen and (max-width: 768px){h1{font-size: 40px !important;}p{font-size: 20px !important;}span{font-size: 15px !important;}.croix img{margin-left: -30px;width: 5% !important;}#btn-suivant{display: flex;justify-content: center;}#btn-suivant button{width: 100% !important;margin-top: 10px !important;}h3{font-size: 17px;}.img-first-resize img{width: 20%;}.img-resize img{margin-bottom: 5px;width: 50%;}input{height: 38px !important;}}
+        body{background: url('./asstes/images/background.png') no-repeat;background-size: cover;}.overlay{background-color: rgba(22, 15, 49, 0.586);height: 791px;padding-top: 120px;}
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="container">
+            <form style="padding: 40px;background-color: white;border-radius: 20px;" method="POST" action="">
+              <a class="croix" href="index.html"><img src="./asstes/images/croix.png" width="2%" alt=""></a>
+              <h3 style="font-weight: bold;text-align: center;margin-top: -35px;">Inscrivez-vous maintenant !</h3><hr style="margin-top: -5px;width: 95%;margin: 0 auto;">
+              <div class="img-first-resize" style="display: flex;justify-content: center;"><img src="./asstes/images/forrm.png" width="12%" height="auto" alt=""></div>
+              <section id="step-1" class="form-step">
+                <div class="row">
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder="Votre nom"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder=""></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder="Votre prénom"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder=""></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder=""></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder=""></div>
+                </div>
+                <div class="row"><div class="col-md-6"><a href="connexion.html" style="color: black;margin-top: -5px;"> Vous-avez déjà un compte ?</a></div><div id="btn-suivant" class="col-md-6"><button style="float: right;background-color: #FC7D34;width: 20%;border-radius: 30px;color: #FFFFFF;border: 1px solid white;" type="submit" class="button btn-navigate-form-step" step_number="2">Suivant</button></div>
+                </div>              </section>
+              <section id="step-2" class="form-step d-none">
+                <div class="row">
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder="Votre nom"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder=""></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder="Votre prénom"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder=""></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder=""></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5 mb-3"><input required style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder=""></div>
+                </div>
+                <div class="container-sm">
+                    <div class="row"><div class="col-md-6"><a href="connexion.html" style="color: black;margin-top: -5px;"> Vous-avez déjà un compte ?</a></div><div id="btn-suivant" class="col-md-6"><button style="float: right;background-color: #FC7D34;width: 20%;border-radius: 30px;color: #FFFFFF;border: 1px solid white;" type="submit" class="button btn-navigate-form-step" step_number="3">S'inscrire</button></div>
+                </div>
+              </section>
+              <section id="step-3" class="form-step d-none">
+                <div style="display: flex;justify-content: center;" class="great"><img src="./asstes/images/great.png" width="7%" alt=""></div>
+                <h1 style="text-align: center;font-size: 40px;color: #FC7D34;">Félicitation</h1>
+                <p style="font-size: 30px;text-align: center;margin-bottom: 10px;">Votre compte a été créer avec succès<br> <span style="font-size: 20px;">vous pouvez consulter votre email ...</span> </p>
+                <div class="row"><div class="col-md-6"><a href="connexion.html" style="color: black;margin-top: -5px;"> Vous-avez déjà un compte ?</a></div><div id="btn-suivant" class="col-md-6"><button style="float: right;background-color: #FC7D34;width: 20%;border-radius: 30px;color: #FFFFFF;border: 1px solid white;" type="submit" class="button btn-navigate-form-step"><a href="connexion.html" style="text-decoration: none;color: #f8f7ff;">Fermer</a></button></div>
+              </section>
+              <!-- stepper part -->
+              <div class="container-md mt-3">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+                            <!-- Step 1 -->
+                            <li class="form-stepper-active text-center form-stepper-list" step="1">
+                                <a class="mx-2"><span class="form-stepper-circle"><span style="font-size: 12px;">1</span></span></a>
+                            </li>
+                            <!-- Step 2 -->
+                            <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                                <a class="mx-2"><span class="form-stepper-circle text-muted"><span style="font-size: 12px;">2</span></span></a>
+                            </li>
+                            <!-- Step 3 -->
+                            <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                                <a class="mx-2"><span class="form-stepper-circle text-muted"><span style="font-size: 12px;">3</span></span></a>
+                            </li>
+                          </ul>
+                    </div>
+                    <div class="col-md-3"></div>
+                  </div>
+              </div>
+              </div>
+            </form>
+        </div>
+    </div>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./asstes/js/add-remove-active.js"></script>
+    <script>
+        const navigateToFormStep = (stepNumber) => {
+            document.querySelectorAll(".form-step").forEach((formStepElement) => {
+                formStepElement.classList.add("d-none");
+            });
+            document.querySelectorAll(".form-stepper-list").forEach((formStepHeader) => {
+                formStepHeader.classList.add("form-stepper-unfinished");
+                formStepHeader.classList.remove("form-stepper-active", "form-stepper-completed");
+            });
+            document.querySelector("#step-" + stepNumber).classList.remove("d-none");
+            const formStepCircle = document.querySelector('li[step="' + stepNumber + '"]');
+            formStepCircle.classList.remove("form-stepper-unfinished", "form-stepper-completed");
+            formStepCircle.classList.add("form-stepper-active");
+            for (let index = 0; index < stepNumber; index++) {
+                const formStepCircle = document.querySelector('li[step="' + index + '"]');
+                if (formStepCircle) {
+                    formStepCircle.classList.remove("form-stepper-unfinished", "form-stepper-active");
+                    formStepCircle.classList.add("form-stepper-completed");
+                }
+            }
+        };
+        document.querySelectorAll(".btn-navigate-form-step").forEach((formNavigationBtn) => {
+            formNavigationBtn.addEventListener("click", () => {
+                const stepNumber = parseInt(formNavigationBtn.getAttribute("step_number"));
+                navigateToFormStep(stepNumber);
+            });
+        });
+    </script>
+</body>
+</html>

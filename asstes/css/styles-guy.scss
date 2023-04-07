@@ -1,0 +1,49 @@
+$colore-souklou-primary: #0d143e;
+$colore-souklou-secondary: #fc4d34;
+
+// Navbar
+.header {
+    .container-fluid {
+        .container {
+            .navbar {
+                .container-fluid {
+                    .navbar-brand{
+                        .logo{
+                            width: 8rem;
+                        }
+                    }
+                    .collapse {
+                        .navbar-nav {
+                            .nav-item {
+                                font-weight: 500;
+                                margin-right: 0.7rem;
+                                
+                                .nav-link {
+                                    &.active {
+                                        padding: 0.3rem 0.8rem;
+                                        color: #fff;
+                                        background-color: $colore-souklou-secondary;
+                                        border-radius: 1rem;
+                                        -webkit-border-radius: 1rem;
+                                        -moz-border-radius: 1rem;
+                                        -ms-border-radius: 1rem;
+                                        -o-border-radius: 1rem;
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                margin-left: 0rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Footer
+.footer {
+    background-color: $colore-souklou-primary;
+}

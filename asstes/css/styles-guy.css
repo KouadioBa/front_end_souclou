@@ -1,0 +1,24 @@
+.header .container-fluid .container .navbar .container-fluid .navbar-brand .logo {
+  width: 8rem;
+}
+.header .container-fluid .container .navbar .container-fluid .collapse .navbar-nav .nav-item {
+  font-weight: 500;
+  margin-right: 0.7rem;
+}
+.header .container-fluid .container .navbar .container-fluid .collapse .navbar-nav .nav-item .nav-link.active {
+  padding: 0.3rem 0.8rem;
+  color: #fff;
+  background-color: #fc4d34;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+.header .container-fluid .container .navbar .container-fluid .collapse .navbar-nav:last-child {
+  margin-left: 0rem;
+}
+
+.footer {
+  background-color: #0d143e;
+}/*# sourceMappingURL=styles-guy.css.map */

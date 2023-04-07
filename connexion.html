@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./asstes/css/styles-guy.css">
+    <link rel="stylesheet" href="./asstes/css/styles-ced.css">
+    <title>Document</title>
+    <style>
+        /* media query */
+        @media only screen and (min-width: 768px)  and (max-width: 992px){.croix img{width: 4% !important;}.btn-suivant{width: 50% !important;}input{height: 48px !important;}}
+        @media only screen and (max-width: 768px){.fon-end a{font-size: 16px !important;}.croix img{margin-left: -30px;width: 5% !important;}#btn-suivant{display: flex;justify-content: center;}#btn-suivant button{width: 100% !important;margin-top: 10px !important;}h3{font-size: 16px;}.img-first-resize img{width: 20%;}.img-resize img{margin-bottom: 5px;width: 50%;}input{height: 38px !important;}}
+        body{background: url('./asstes/images/background.png') no-repeat;background-size: cover;}.overlay{background-color: rgba(22, 15, 49, 0.586);height: 791px;padding-top: 120px;}
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="container">
+            <form style="padding: 40px;background-color: white;border-radius: 20px;">
+              <a class="croix" href="index.html"><img src="./asstes/images/croix.png" width="2%" alt=""></a>
+              <h3 style="font-weight: bold;text-align: center;margin-top: -35px;">Connectez-vous maintenant !</h3><hr style="margin-top: -5px;width: 95%;margin: 0 auto;">
+              <div class="img-first-resize" style="display: flex;justify-content: center;"><img src="./asstes/images/forrm.png" width="12%" height="auto" alt=""></div>
+              <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-6 mb-3"><input style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder="Votre Email"></div>
+                  <div class="col-md-3"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 mb-3"><input style="height: 60px;border-radius: 20px;" type="text" class="form-control" placeholder="Votre Mot de passe"></div>
+                <div class="col-md-3"></div>
+              </div>
+              <div style="display: flex;justify-content: center;width: 100%;" id="btn-suivant" class="col-md-6 mb-4"><button style="background-color: #FC7D34;width: 20%;border-radius: 30px;color: #FFFFFF;" type="submit" class="btn btn-suivant"><a href="index.html" style="text-decoration: none;color: white;">Se connecter</a></button></div>
+              <div style="display: flex;justify-content: center;width: 100%;" class="col-md-6 fon-end"><a href="login.html" style="color: black;margin-top: -5px;font-size: 20px;">Vous n'avez pas de compte ? Inscrivez-vous !</a></div>
+            </form>
+        </div>
+    </div>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./asstes/js/add-remove-active.js"></script>
+</body>
+</html>
